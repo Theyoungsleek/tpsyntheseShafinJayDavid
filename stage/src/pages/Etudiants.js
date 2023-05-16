@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import "./Etudiant.css"
 
 
 const Etudiants = () => {
+  useEffect(() => {
+    document.title = 'Employeurs';
+  }, []);
+  const history = useHistory();
+
+  const handleInscriptionClick = () => {
+    history.push('/inscription');
+  };
   return (
     <div className="page-etudiants">
       <header>
-        <h1>Étudiants</h1>
+        <h1>Édition  - Directives pour les étudiants</h1>
       </header>
       <main>
-        <h4>Édition  - Directives pour les étudiants</h4>
-        <p>
+       
+        <h2>
           Tâches à effectuer par l'étudiant à la session d'automne (c'est-à-dire maintenant):
-        </p>
+        </h2>
         <ul>
           <li>
             Au plus tard le mardi 18 septembre à 12h00: Produire un CV que vous devez remettre au
@@ -120,6 +129,7 @@ coordonnateur vous devez inscrire dans le sujet du message:
 Le professeur superviseur contactera l'étudiant (selon l'horaire préalablement établi avec l'étudiant) à chaque semaine. Le professeur-superviseur rencontre les étudiants à chaque deux semaines (à moins d'une entente particulière avec le superviseur de l'entreprise).
 
 À la fin des stages (habituellement dans la semaine d'évaluation, une à deux semaines après les stages), les stagiaires seront appelés à présenter leurs projets de fin d'études aux professeurs et aux autres stagiaires. Les superviseurs en entreprise sont les bienvenus à ces présentations (les personnes intéressées devraient convenir de l'horaire avec le professeur-superviseur).</p>
+<button onClick={handleInscriptionClick}>S'inscrire</button>
    </main>
 </div>
 );

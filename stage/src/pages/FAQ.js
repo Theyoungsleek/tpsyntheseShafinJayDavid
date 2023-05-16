@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './FAQ.css';
 
 const FAQ = () => {
+  useEffect(() => {
+    document.title = 'FAQ';
+  }, []);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleDropdown = (id) => {

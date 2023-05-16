@@ -11,17 +11,17 @@ function NavLinks(props) {
                 
                 
                 
-                    <a href="/accueil">
-                        <img
-                            className="image-cegep"
-                            src="https://www.cmontmorency.qc.ca/wp-content/uploads/2018/03/Logomo_1400.png"
-                            alt="Logo Cegep"
-                            
-                        />
-                    </a>
+                    
 
                 <ul className="link-navigateur">
-                    
+                    <a href="/accueil">
+                            <img
+                                className="image-cegep"
+                                src="https://www.cmontmorency.qc.ca/wp-content/uploads/2018/03/Logomo_1400.png"
+                                alt="Logo Cegep"
+                                
+                            />
+                    </a>
                     
                     <li>
                         <NavLink to="/accueil" > Accueil</NavLink>

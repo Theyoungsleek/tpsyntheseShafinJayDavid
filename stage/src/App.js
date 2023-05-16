@@ -6,6 +6,7 @@ import Employeurs from './pages/Employeurs';
 import FAQ from './pages/FAQ';
 import Stage from './pages/Stage';
 import Footer from './components/footer';
+import './components/Footer.css';
 
 import MainNav from './components/navigation/MainNav';
 import { BrowserRouter as Router, Route, Switch} from
@@ -13,6 +14,7 @@ import { BrowserRouter as Router, Route, Switch} from
 
 function App() {
   return (
+    
     <div className='App'>
       <Router>
         
@@ -41,10 +43,13 @@ function App() {
           
         </main>
         
-
+          <Footer/>
+        
+        
       </Router>
-      <Footer/>
+      
     </div>
+    
     
   );
 }
