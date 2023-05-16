@@ -1,8 +1,9 @@
 import React from 'react';
+import "./Employeurs.css"
 
 const Employeurs = () => {
   return (
-    <div>
+    <div className='page-employeurs'>
       <header>
         <h1>Employeurs</h1>
       </header>

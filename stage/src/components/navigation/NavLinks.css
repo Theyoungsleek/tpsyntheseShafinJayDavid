@@ -1,80 +1,88 @@
 
+.image-cegep {
+  width: 200px;
+  height: 30px;
+  padding-top: 40px;
+  
 
+}
 
+.link-navigateur {
+  
+  list-style: none;
+  margin: 0;
+  padding-left: 140px;
+  padding-bottom: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-navigateur li {
+  margin: 1rem;
+}
+
+.link-navigateur a {
+  border: 1px solid transparent;
+  color: #292929;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.link-navigateur a:hover,
+.link-navigateur a:active,
+.link-navigateur a.active {
+  background: #d5c80a;
+  border-color: #373535;
+  color: #292929;
+}
+
+.link-navigateur button {
+  cursor: pointer;
+  border: 1px solid #292929;
+  color: #8d8989;
+  background: transparent;
+  padding: 100px;
+  font: inherit;
+}
+
+.link-navigateur button:focus {
+  outline: none;
+}
+
+.link-navigateur button:hover,
+.link-navigateur button:active {
+  background: #292929;
+  color: white;
+}
+
+@media (min-width: 768px) {
   .link-navigateur {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
   }
-  
+
   .link-navigateur li {
-    margin: 1rem;
+    margin: 0 0.5rem;
   }
-  
+
   .link-navigateur a {
-    border: 1px solid transparent;
-    color: #292929;
+    color: white;
     text-decoration: none;
-    padding: 0.5rem;
   }
-  
-  .link-navigateur a:hover,
-  .link-navigateur a:active,
-  .link-navigateur a.active {
-    background: #f8df00;
-    border-color: #292929;
-    color: #292929;
-  }
-  
+
   .link-navigateur button {
-    cursor: pointer;
-    border: 1px solid #292929;
-    color: #292929;
-    background: transparent;
-    padding: 0.5rem;
-    font: inherit;
-  }
-  
-  .link-navigateur button:focus {
-    outline: none;
+    border: 1px solid rgb(161, 0, 0);
+    color: rgb(255, 4, 4);
+    background: solid rgb(161, 0, 0);
   }
   
   .link-navigateur button:hover,
   .link-navigateur button:active {
-    background: #292929;
-    color: white;
+    background: #25f091;
+    color: #292929;
   }
-  
-  @media (min-width: 768px) {
-    .link-navigateur {
-      flex-direction: row;
-    }
-  
-    .link-navigateur li {
-      margin: 0 0.5rem;
-    }
-  
-    .link-navigateur a {
-      color: white;
-      text-decoration: none;
-    }
-  
-    .link-navigateur button {
-      border: 1px solid rgb(161, 0, 0);
-      color: rgb(255, 4, 4);
-      background: solid rgb(161, 0, 0);
-    }
-    
-    .link-navigateur button:hover,
-    .link-navigateur button:active {
-      background: #25f091;
-      color: #292929;
-    }
-  }
+}
   

@@ -1,8 +1,9 @@
 import React from 'react';
+import "./Accueil.css"
 
 const Accueil = () => {
   return (
-    <div>
+    <div className='page-accueil'>
       <header>
         <h1>Édition 2023</h1>
       </header>

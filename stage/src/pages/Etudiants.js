@@ -1,8 +1,10 @@
 import React from 'react';
+import "./Etudiant.css"
+
 
 const Etudiants = () => {
   return (
-    <div>
+    <div className="page-etudiants">
       <header>
         <h1>Étudiants</h1>
       </header>
