@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import "./Etudiant.css"
+import FormulaireAjoutEtudiant from './inscriptionE';
 
 
 const Etudiants = () => {
@@ -8,9 +9,14 @@ const Etudiants = () => {
     document.title = 'Employeurs';
   }, []);
   const history = useHistory();
+  const [showForm, setShowForm] = useState(false);
 
   const handleInscriptionClick = () => {
-    history.push('/inscription');
+    setShowForm(true);
+  };
+
+  const handleFormCancel = () => {
+    setShowForm(false);
   };
   return (
     <div className="page-etudiants">
@@ -130,6 +136,12 @@ Le professeur superviseur contactera l'étudiant (selon l'horaire préalablement
 
 À la fin des stages (habituellement dans la semaine d'évaluation, une à deux semaines après les stages), les stagiaires seront appelés à présenter leurs projets de fin d'études aux professeurs et aux autres stagiaires. Les superviseurs en entreprise sont les bienvenus à ces présentations (les personnes intéressées devraient convenir de l'horaire avec le professeur-superviseur).</p>
 <button onClick={handleInscriptionClick}>S'inscrire</button>
+        {showForm && (
+          <div className="form-container">
+            <h2>Ajouter un étudiant en recherche de stage</h2>
+            <FormulaireAjoutEtudiant onCancel={handleFormCancel} />
+          </div>
+          )}
    </main>
 </div>
 );
