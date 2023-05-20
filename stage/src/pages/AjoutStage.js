@@ -14,6 +14,33 @@ const FormulaireAjoutStage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
+    // Perform validation
+    if (!/^[a-z\s]+$/i.test(nomContact)) {
+      alert('Le nom du contact doit comporter uniquement des lettres');
+      return;
+    }
+    
+    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(courrielContact)) {
+      alert('Le courriel est dans un format invalide');
+      return;
+    }
+
+    if (!/^\+?\d{10,15}$/.test(telephoneContact)) {
+      alert('Le numéro de téléphone est dans un format invalide');
+      return;
+    }
+
+    if (nombrePostes <= 0) {
+      alert('Le nombre de postes doit être supérieur à zéro');
+      return;
+    }
+
+    if (!isNaN(parseFloat(remuneration)) && parseFloat(remuneration) <= 0) {
+      alert('La rémunération doit être un nombre supérieur à zéro');
+      return;
+    }
+    
+    
     alert('Stage added successfully!');
    
     setNomContact('');
@@ -107,13 +134,12 @@ const FormulaireAjoutStage = () => {
             value={remuneration}
             onChange={(e) => setRemuneration(e.target.value)}
             required
-            />
-            </label>
-            <button type="submit">Ajouter le stage</button>
-            </form>
-            </div>
-            );
-            };
+          />
+        </label>
+        <button type="submit">Ajouter le stage</button>
+      </form>
+    </div>
+  );
+};
             
-            export default FormulaireAjoutStage;
-
+export default FormulaireAjoutStage;
