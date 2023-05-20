@@ -14,7 +14,7 @@ function NavLinks(props) {
                     
 
                 <ul className="link-navigateur">
-                    <a href="/accueil">
+                    <a href="/">
                             <img
                                 className="image-cegep"
                                 src="https://www.cmontmorency.qc.ca/wp-content/uploads/2018/03/Logomo_1400.png"
@@ -24,7 +24,7 @@ function NavLinks(props) {
                     </a>
                     
                     <li>
-                        <NavLink to="/accueil" > Accueil</NavLink>
+                        <NavLink to="/"> Accueil</NavLink>
                     </li>
                     <li>
                         <NavLink to="/employeurs" > Employeurs</NavLink>
@@ -33,9 +33,14 @@ function NavLinks(props) {
                         <NavLink to="/etudiants" > Étudiants</NavLink>
                     </li>
                     <li>
+                        <NavLink to="/stage" >Stage</NavLink>
+                        
+                    </li>
+                    <li>
                         <NavLink to="/faq" > FAQ</NavLink>
                         
                     </li>
+                    
                 </ul>
             </div>
             );

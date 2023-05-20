@@ -18,9 +18,14 @@ function Navbar(props) {
                 <NavLink to="/etudiants"> Etudiants</NavLink>
             </li>
             <li>
+                <NavLink to="/stage"> Stage</NavLink>
+                
+            </li>
+            <li>
                 <NavLink to="/faq"> FAQ</NavLink>
                 
             </li>
+            
     </ul>);
 
 

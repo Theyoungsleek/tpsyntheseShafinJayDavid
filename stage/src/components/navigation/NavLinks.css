@@ -32,11 +32,9 @@
 }
 
 .link-navigateur a:hover,
-.link-navigateur a:active,
-.link-navigateur a.active {
-  background: #d5c80a;
-  border-color: #373535;
-  color: #292929;
+.link-navigateur a:active {
+  
+  color: #d5c80a;
 }
 
 .link-navigateur button {

@@ -21,7 +21,7 @@ function App() {
         <MainNav />
         <main>
           <Switch>
-            <Route exact path="/accueil" >
+            <Route exact path="/" >
               <Accueil />
             </Route>
             <Route path="/etudiants"> 
@@ -30,12 +30,13 @@ function App() {
             <Route path="/employeurs"> 
               <Employeurs /> 
             </Route>
-            <Route path="/faq"> 
-              <FAQ /> 
-            </Route>
             <Route path="/stage"> 
               <Stage /> 
             </Route>
+            <Route path="/faq"> 
+              <FAQ /> 
+            </Route>
+            
 
           </Switch>
 

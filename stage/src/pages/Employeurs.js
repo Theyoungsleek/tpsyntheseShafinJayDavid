@@ -47,7 +47,7 @@ const Employeurs = () => {
               Sur réception de ce formulaire, le coordonnateur des stages entrera en contact avec le responsable en entreprise pour discuter du stage.
             </p>
             <p>
-              Veuillez vous référez à la page <a href="/profil-sortie">Profil de sortie</a> pour connaître le profil de sortie et les compétences des étudiants.
+              Veuillez vous référez à la page <a href="/stage">Profil de sortie</a> pour connaître le profil de sortie et les compétences des étudiants.
             </p>
             <button onClick={handleInscriptionClick}>Inscrire Stage</button>
           </div>
