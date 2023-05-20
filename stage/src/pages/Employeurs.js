@@ -20,12 +20,9 @@ const Employeurs = () => {
 
   const FormComponent = () => {
     return (
-      <form>
-        {FormulaireAjoutStage}
-        <button type="submit">Submit</button>
-      </form>
+        <FormulaireAjoutStage />
     );
-  };
+};
 
   return (
     <div className='page-employeurs'>
@@ -36,7 +33,7 @@ const Employeurs = () => {
         {showForm ? (
           <div className="form-container">
             <h2>Formulaire d'inscription de milieu de stage</h2>
-            <FormComponent /> {/* Render the form component */}
+             <FormComponent />
             <button onClick={handleFormClose}>Fermer</button>
           </div>
         ) : (
