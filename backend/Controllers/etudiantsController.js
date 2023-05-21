@@ -23,6 +23,15 @@ exports.getEtudiant = async (req, res) => {
   }
 };
 
+exports.getListEtudiants = async (req, res) => {
+  try {
+    const etudiants = await Etudiant.find();
+    res.json(etudiants);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 exports.updateEtudiant = async (req, res) => {
   if (req.body.numeroDA != null) {
     res.etudiant.numeroDA = req.body.numeroDA;

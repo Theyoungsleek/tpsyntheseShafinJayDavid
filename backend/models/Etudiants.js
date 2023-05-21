@@ -32,6 +32,10 @@ const EtudiantSchema = new mongoose.Schema({
     required: true,
     enum: ['Réseaux et sécurité', 'Développement d’applications']
   },
+  stage: {
+    type: String,
+    default: ""
+  }
 });
 
 module.exports = mongoose.model('Etudiant', EtudiantSchema);

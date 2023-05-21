@@ -57,6 +57,11 @@ const EmployeurSchema = new mongoose.Schema({
     type: Number,
     required: true,
     min: [0, 'La rémunération ne peut pas être négative']
+  },
+  listEtudiant: {
+    type: [String],
+    default: []
+
   }
 });
 

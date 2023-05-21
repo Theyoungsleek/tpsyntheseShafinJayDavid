@@ -7,6 +7,7 @@ const FormulaireAjoutEtudiant = () => {
     nom: '',
     email: '',
     profil: '',
+    stage:'',
   });
 
   const numDa = useRef(null);
@@ -59,6 +60,7 @@ const FormulaireAjoutEtudiant = () => {
         nom: '',
         email: '',
         profil: '',
+        stage:'',
       });
 
     } catch (error) {
