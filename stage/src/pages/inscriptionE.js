@@ -14,24 +14,46 @@ const FormulaireAjoutEtudiant = () => {
   const courrielEtudiant = useRef(null);
   const profilEtudiant = useRef(null);
 
-  //Bouton Ajouter étudiant
-  const buttonAjouterClick = (event) => {
+  const buttonAjouterClick = async (event) => {
     event.preventDefault();
 
+    // perform validation
+    const numDaPattern = /^[0-9]{1,9}$/;
+    const nomPattern = /^[A-Za-z]+$/;
+    const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+
+    if (!numDaPattern.test(donneesEtudiant.numeroDA)) {
+      alert("Numéro de DA invalide!");
+      return;
+    }
+
+    if (!nomPattern.test(donneesEtudiant.nom)) {
+      alert("Nom invalide! Seules les lettres sont acceptées.");
+      return;
+    }
+
+    if (!emailPattern.test(donneesEtudiant.email)) {
+      alert("Courriel invalide!");
+      return;
+    }
+
     try {
-      if (!/^\d{1,9}$/.test(donneesEtudiant.numeroDA)) {
-        throw new Error('Le numéro de DA doit comporter jusqu\'à 9 chiffres');
+      const response = await fetch('http://localhost:3000/etudiants', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(donneesEtudiant)
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Could not add student.');
       }
 
-      if (!/^[a-z\s]+$/i.test(donneesEtudiant.nom)) {
-        throw new Error('Le nom doit comporter uniquement des lettres');
-      }
+      alert("Étudiant ajouté avec succès!");
 
-      if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(donneesEtudiant.email)) {
-        throw new Error('Le courriel est dans un format invalide');
-      }
-
-      console.log(donneesEtudiant);
       setDonneesEtudiant({
         numeroDA: '',
         nom: '',
@@ -39,9 +61,9 @@ const FormulaireAjoutEtudiant = () => {
         profil: '',
       });
 
-    } catch(e) {
-      alert(e.message)
-      console.log(e)
+    } catch (error) {
+      console.log(error);
+      alert("There was an error while adding the student.");
     }
   }
 
@@ -100,11 +122,9 @@ const FormulaireAjoutEtudiant = () => {
           ref={profilEtudiant}
           required
         >
-
           <option></option>
           <option>Réseaux et sécurité</option>
           <option>Développement d’applications</option>
-
         </select>
       </label>
 

@@ -1,4 +1,4 @@
-const Etudiant = require('../models/Etudiant');
+const Etudiant = require('../models/Etudiants');
 
 exports.createEtudiant = async (req, res) => {
   const newEtudiant = new Etudiant(req.body);
@@ -6,6 +6,7 @@ exports.createEtudiant = async (req, res) => {
     const etudiant = await newEtudiant.save();
     res.status(201).json(etudiant);
   } catch (err) {
+    console.log(err);
     res.status(400).json({ message: err.message });
   }
 };
@@ -42,9 +43,4 @@ exports.deleteEtudiant = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-module.exports = {
-  createEtudiant,
-  getEtudiant,
-  updateEtudiant,
-  deleteEtudiant,
-};
+

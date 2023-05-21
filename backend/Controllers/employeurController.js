@@ -6,6 +6,7 @@ exports.createEmployeur = async (req, res) => {
     const employeur = await newEmployeur.save();
     res.status(201).json(employeur);
   } catch (err) {
+    console.log(err);
     res.status(400).json({ message: err.message });
   }
 };
@@ -21,6 +22,16 @@ exports.getEmployeur = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+exports.getEmployeurList = async (req, res) => {
+  try {
+      const employeurs = await Employeur.find();
+      res.json(employeurs);
+  } catch (err) {
+      res.status(500).json({ message: err.message });
+  }
+};
+
 
 exports.updateEmployeur = async (req, res) => {
   if (req.body.nomContact != null) {
@@ -43,9 +54,4 @@ exports.deleteEmployeur = async (req, res) => {
   }
 };
 
-module.exports = {
-  createEmployeur,
-  getEmployeur,
-  updateEmployeur,
-  deleteEmployeur,
-};
+

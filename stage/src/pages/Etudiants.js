@@ -18,6 +18,11 @@ const Etudiants = () => {
   const handleFormCancel = () => {
     setShowForm(false);
   };
+
+  const handleDisponibleClick = () => {
+    history.push("/etudiantlist");
+  };
+
   return (
     <div className="page-etudiants">
       <header>
@@ -140,8 +145,11 @@ Le professeur superviseur contactera l'étudiant (selon l'horaire préalablement
           <div className="form-container">
             <h2>Ajouter un étudiant en recherche de stage</h2>
             <FormulaireAjoutEtudiant onCancel={handleFormCancel} />
+
           </div>
           )}
+<button className="button-list-etud"  onClick={handleDisponibleClick}>Afficher les étudiants</button>
+
    </main>
 </div>
 );

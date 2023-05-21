@@ -24,6 +24,10 @@ const Employeurs = () => {
     );
 };
 
+const handleDisponibleClick = () => {
+  history.push("/stagelist");
+};
+
   return (
     <div className='page-employeurs'>
       <header>
@@ -50,6 +54,8 @@ const Employeurs = () => {
               Veuillez vous référez à la page <a href="/stage">Profil de sortie</a> pour connaître le profil de sortie et les compétences des étudiants.
             </p>
             <button onClick={handleInscriptionClick}>Inscrire Stage</button>
+
+            <button className="button-list" onClick={handleDisponibleClick}>Stage disponible</button>
           </div>
         )}
       </main>

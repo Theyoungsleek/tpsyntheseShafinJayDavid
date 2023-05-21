@@ -7,6 +7,8 @@ import FAQ from './pages/FAQ';
 import Stage from './pages/Stage';
 import Footer from './components/footer';
 import './components/Footer.css';
+import StageList from './pages/StageDisponible';
+import EtudiantList from './pages/EtudiantList';
 
 import MainNav from './components/navigation/MainNav';
 import { BrowserRouter as Router, Route, Switch} from
@@ -17,7 +19,7 @@ function App() {
     
     <div className='App'>
       <Router>
-        
+     
         <MainNav />
         <main>
           <Switch>
@@ -36,6 +38,12 @@ function App() {
             <Route path="/faq"> 
               <FAQ /> 
             </Route>
+            <Route path="/stagelist"> 
+              <StageList/> 
+            </Route>
+            <Route path="/etudiantlist"> 
+              <EtudiantList/> 
+            </Route>
             
 
           </Switch>
@@ -45,7 +53,6 @@ function App() {
         </main>
         
           <Footer/>
-        
         
       </Router>
       

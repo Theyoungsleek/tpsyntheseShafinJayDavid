@@ -1,0 +1,35 @@
+.etudiant-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+  }
+  
+  .etudiant-card {
+    border: 1px solid #333;
+    border-radius: 0.5em;
+    padding: 1em;
+    width: 80%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .etudiant-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5em;
+  }
+  
+  .etudiant-row h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .etudiant-row p {
+    margin: 0;
+    font-size: 1em;
+    color: #666;
+  }
+  

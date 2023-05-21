@@ -1,19 +1,43 @@
 const express = require('express');
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
+const cors = require('cors');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const etudiantsRoutes = require('./routes/etudiantsRoutes');
+const employeursRoutes = require('./routes/employeurRoutes');
+const HttpErreur = require('./models/http-erreur');
+
 const app = express();
+app.use(cors());
+const PORT = process.env.PORT || 3000;
+const MongoClient = require('mongodb');
 
-const etudiantRoutes = require('./routes/etudiantRoutes');
-const employeurRoutes = require('./routes/employeurRoutes');
+app.use(bodyParser.json());
 
-app.use('/etudiant', etudiantRoutes);
-app.use('/employeur', employeurRoutes);
+app.use('/etudiants', etudiantsRoutes);
+app.use('/employeurs', employeursRoutes);
 
-app.use((requete, reponse, next) =>{
-    reponse.setHeader("Access-Control-Allow-Origin", "*");
-    reponse.setHeader("Access-Control-Allow-Headers", "*");
-    reponse.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
-    next();
+app.use((requete, reponse, next) => {
+    return next(new HttpErreur("Route non trouvée", 404));
+});
+
+app.use((error, requete, reponse, next) => {
+    if (reponse.headerSent) {
+      return next(error);
+    }
+    reponse.status(error.code || 500);
+    reponse.json({
+      message: error.message || "Une erreur inconnue est survenue",
+    });
+});
+
+mongoose
+.connect("mongodb://localhost:27017/stage")
+.then(() => {
+    app.listen(3000)
+    console.log("Connexion à la base de données réussie");
 })
+.catch(erreur => {
+    console.log(erreur);
+});
 
-
+app.use(bodyParser.json());

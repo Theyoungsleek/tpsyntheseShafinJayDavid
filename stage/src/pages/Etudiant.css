@@ -78,4 +78,7 @@
   .page-etudiants button:hover {
     background-color: #0056b3;
   }
+  .button-list-etud {
+    margin-left: 400px;
+  }
   
