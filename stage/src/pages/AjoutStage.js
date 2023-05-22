@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FormulaireAjoutEmployeur = () => {
+const AjoutStage = () => {
   const [donneesEmployeur, setDonneesEmployeur] = useState({
     nomContact: '',
     courrielContact: '',
@@ -25,7 +25,7 @@ const FormulaireAjoutEmployeur = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3000/employeurs', {
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL+'/employeurs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -169,4 +169,4 @@ const FormulaireAjoutEmployeur = () => {
   );
 };
 
-export default FormulaireAjoutEmployeur;
+export default AjoutStage;

@@ -9,7 +9,7 @@ const StageList = () => {
   useEffect(() => {
     const fetchStages = async () => {
       try {
-        const response = await fetch('http://localhost:3000/employeurs');
+        const response = await fetch(process.env.REACT_APP_BACKEND_URL+'/employeurs');
         const data = await response.json();
 
         if (!response.ok) {

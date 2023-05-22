@@ -4,6 +4,11 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer className="footer">
+      
+      <p className='info-prof'>Sylvain Labranche  sylvain.labranche@cmontmorency.qc.ca</p>
+      
+      
+
 
       <div className="footer__logo"><img
         className="image-cegep"
@@ -32,6 +37,8 @@ const Footer = () => {
           <i className="fab fa-twitter"></i>
         </a>
       </div>
+
+      
 
     </footer>
   );

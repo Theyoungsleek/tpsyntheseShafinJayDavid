@@ -40,6 +40,11 @@ function NavLinks(props) {
                         <NavLink to="/faq" > FAQ</NavLink>
                         
                     </li>
+
+                    <li>
+                        <NavLink to="/connexion" >Connexion</NavLink>
+                        
+                    </li>
                     
                 </ul>
             </div>

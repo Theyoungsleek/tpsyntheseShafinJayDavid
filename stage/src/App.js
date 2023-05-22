@@ -9,6 +9,7 @@ import Footer from './components/footer';
 import './components/Footer.css';
 import StageList from './pages/StageDisponible';
 import EtudiantList from './pages/EtudiantList';
+import Connexion from './pages/connexion';
 
 import MainNav from './components/navigation/MainNav';
 import { BrowserRouter as Router, Route, Switch} from
@@ -38,6 +39,9 @@ function App() {
             <Route path="/faq"> 
               <FAQ /> 
             </Route>
+            <Route path="/connexion">
+                <Connexion/>
+              </Route>
             <Route path="/stagelist"> 
               <StageList/> 
             </Route>

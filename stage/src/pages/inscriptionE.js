@@ -39,7 +39,7 @@ const FormulaireAjoutEtudiant = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3000/etudiants', {
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL+'/etudiants', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

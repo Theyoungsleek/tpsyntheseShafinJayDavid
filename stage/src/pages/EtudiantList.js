@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './EtudiantList.css';
 
+
 const EtudiantList = () => {
   const [etudiants, setEtudiants] = useState([]);
   const [stages, setStages] = useState([]);
@@ -10,7 +11,7 @@ const EtudiantList = () => {
   useEffect(() => {
     const fetchEtudiants = async () => {
       try {
-        const response = await fetch('http://localhost:3000/etudiants');
+        const response = await fetch(process.env.REACT_APP_BACKEND_URL+'/etudiants');
         const data = await response.json();
 
         if (!response.ok) {
@@ -25,7 +26,7 @@ const EtudiantList = () => {
 
     const fetchStages = async () => {
       try {
-        const response = await fetch('http://localhost:3000/employeurs');
+        const response = await fetch(process.env.REACT_APP_BACKEND_URL+'/employeurs');
         const data = await response.json();
 
         if (!response.ok) {
@@ -42,9 +43,22 @@ const EtudiantList = () => {
     fetchStages();
   }, []);
 
+  const getStageSelonTypes = (typeStages) => {
+    const filtre = [];
+    stages.map((stage) => {
+      if (stage.typeStage === typeStages) {
+        filtre.push(stage);
+      }
+    })
+    console.log("filtre", filtre);
+    return filtre
+  }
+
+
   const handleAssignEtudiant = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/etudiants/${selectedEtudiantId}`, {
+      console.log("selectedEtudiantId", selectedEtudiantId._id)
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL+`/etudiants/${selectedEtudiantId._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +69,7 @@ const EtudiantList = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || 'Could not assign etudiant to stage.');
+        throw new Error(data.message || 'Erreur pour assigner un etudiant a stage.');
       }
 
       const updatedEtudiants = etudiants.map((etudiant) => {
@@ -66,6 +80,27 @@ const EtudiantList = () => {
       });
 
       setEtudiants(updatedEtudiants);
+
+      const responseStage = await fetch(process.env.REACT_APP_BACKEND_URL+`/stages/${selectedStageId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ etudiantId: selectedEtudiantId._id }),
+      });
+      const dataStage = await responseStage.json();
+
+    if (!responseStage.ok) {
+      throw new Error(dataStage.message || 'Erreur pour ajouter un etudiant au stage.');
+    }
+    const updatedStages = stages.map((stage) => {
+      if (stage._id === selectedStageId) {
+        return { ...stage, etudiants: [...stage.etudiants, selectedEtudiantId._id] };
+      }
+      return stage;
+    });
+
+    setStages(updatedStages);
 
       setSelectedEtudiantId('');
       setSelectedStageId('');
@@ -100,7 +135,7 @@ const EtudiantList = () => {
           </div>
           <button
             onClick={() => {
-              setSelectedEtudiantId(etudiant._id);
+              setSelectedEtudiantId(etudiant);
             }}
           >
             Assigner
@@ -111,19 +146,26 @@ const EtudiantList = () => {
       {selectedEtudiantId && (
         <div className="overlay">
           <div className="stage-selection">
-            <h3>Sélectionner le stage:</h3>
+            <h4>Sélectionner le stage:</h4>
             <select
               value={selectedStageId}
               onChange={(event) => setSelectedStageId(event.target.value)}
             >
+              {console.log(getStageSelonTypes(selectedEtudiantId.profil))}
+              {console.log(stages)}
               <option value="">Sélectionner un stage</option>
-              {stages.map((stage) => (
-                <option key={stage._id} value={stage._id}>
-                  {stage.nomStage}
+              {getStageSelonTypes(selectedEtudiantId.profil).map((stage) => {
+                console.log("Profile de l'étudiant", stage.profil)
+                return (
+                  <option key={stage._id} value={stage._id}>
+                  {stage.nomContact}
                 </option>
-              ))}
+                )
+              }
+              )}
+              
             </select>
-            <button onClick={handleAssignEtudiant}>Assigner</button>
+            <button onClick={handleAssignEtudiant}>Assigner le stage</button>
           </div>
         </div>
       )}
