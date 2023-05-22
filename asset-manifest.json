@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.813cad35.css",
-    "main.js": "/static/js/main.b766f5e6.js",
-    "index.html": "/index.html",
-    "main.813cad35.css.map": "/static/css/main.813cad35.css.map",
-    "main.b766f5e6.js.map": "/static/js/main.b766f5e6.js.map"
+    "main.css": "/https//theyoungsleek/tpsynteseShafinJayDavid/static/css/main.813cad35.css",
+    "main.js": "/https//theyoungsleek/tpsynteseShafinJayDavid/static/js/main.5459d79d.js",
+    "index.html": "/https//theyoungsleek/tpsynteseShafinJayDavid/index.html",
+    "main.813cad35.css.map": "/https//theyoungsleek/tpsynteseShafinJayDavid/static/css/main.813cad35.css.map",
+    "main.5459d79d.js.map": "/https//theyoungsleek/tpsynteseShafinJayDavid/static/js/main.5459d79d.js.map"
   },
   "entrypoints": [
     "static/css/main.813cad35.css",
-    "static/js/main.b766f5e6.js"
+    "static/js/main.5459d79d.js"
   ]
 }
