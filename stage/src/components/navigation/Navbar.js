@@ -9,7 +9,7 @@ function Navbar(props) {
     return (
         <ul className="nav-links">
             <li>
-                <NavLink to="/"> Accueil</NavLink>
+                <NavLink to="/accueil"> Accueil</NavLink>
             </li>
             <li>
                 <NavLink to="/employeurs"> Employeurs</NavLink>

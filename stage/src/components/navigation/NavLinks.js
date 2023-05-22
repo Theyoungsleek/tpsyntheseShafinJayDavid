@@ -14,7 +14,7 @@ function NavLinks(props) {
                     
 
                 <ul className="link-navigateur">
-                    <a href="/">
+                    <a href="/accueil">
                             <img
                                 className="image-cegep"
                                 src="https://www.cmontmorency.qc.ca/wp-content/uploads/2018/03/Logomo_1400.png"
