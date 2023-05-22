@@ -11,6 +11,7 @@ exports.createEtudiant = async (req, res) => {
   }
 };
 
+
 exports.getEtudiant = async (req, res) => {
   try {
     const etudiant = await Etudiant.findById(req.params.id);

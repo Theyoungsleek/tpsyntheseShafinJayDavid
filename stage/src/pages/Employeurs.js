@@ -7,6 +7,7 @@ const Employeurs = () => {
   useEffect(() => {
     document.title = 'Employeurs';
   }, []);
+   
   
   return (
     <div className='page-employeurs'>
