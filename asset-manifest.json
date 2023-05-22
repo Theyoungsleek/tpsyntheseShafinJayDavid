@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tpsyntheseShafinJayDavid/static/css/main.dad354d1.css",
+    "main.js": "/tpsyntheseShafinJayDavid/static/js/main.a278e112.js",
+    "index.html": "/tpsyntheseShafinJayDavid/index.html",
+    "main.dad354d1.css.map": "/tpsyntheseShafinJayDavid/static/css/main.dad354d1.css.map",
+    "main.a278e112.js.map": "/tpsyntheseShafinJayDavid/static/js/main.a278e112.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dad354d1.css",
+    "static/js/main.a278e112.js"
+  ]
+}
