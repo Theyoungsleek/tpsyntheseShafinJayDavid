@@ -1,0 +1,84 @@
+.page-etudiants {
+    padding-top: 3px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .page-etudiants header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .page-etudiants h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .page-etudiants main {
+    margin-top: 40px;
+  }
+  
+  .page-etudiants p {
+    margin-bottom: 20px;
+  }
+  
+  .page-etudiants ul {
+    margin-bottom: 20px;
+    margin-left: 40px;
+  }
+  
+  .page-etudiants li {
+    margin-bottom: 10px;
+  }
+  
+  .page-etudiants a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .page-etudiants a:hover {
+    text-decoration: underline;
+  }
+  
+  .page-etudiants h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .page-etudiants .retrait {
+    margin-left: 40px;
+  }
+  
+  .page-etudiants .petit {
+    font-size: 14px;
+  }
+  
+  .page-etudiants button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .page-etudiants button:hover {
+    background-color: #0056b3;
+  }
+  .button-list-etud {
+    margin-left: 400px;
+  }
+  
