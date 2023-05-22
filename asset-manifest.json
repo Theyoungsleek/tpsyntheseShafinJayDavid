@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/tpsyntheseShafinJayDavid/static/css/main.813cad35.css",
-    "main.js": "/tpsyntheseShafinJayDavid/static/js/main.5459d79d.js",
+    "main.js": "/tpsyntheseShafinJayDavid/static/js/main.cba75265.js",
     "index.html": "/tpsyntheseShafinJayDavid/index.html",
     "main.813cad35.css.map": "/tpsyntheseShafinJayDavid/static/css/main.813cad35.css.map",
-    "main.5459d79d.js.map": "/tpsyntheseShafinJayDavid/static/js/main.5459d79d.js.map"
+    "main.cba75265.js.map": "/tpsyntheseShafinJayDavid/static/js/main.cba75265.js.map"
   },
   "entrypoints": [
     "static/css/main.813cad35.css",
-    "static/js/main.5459d79d.js"
+    "static/js/main.cba75265.js"
   ]
 }
