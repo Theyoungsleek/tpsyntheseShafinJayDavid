@@ -31,7 +31,8 @@ app.use((error, requete, reponse, next) => {
 });
 
 mongoose
-.connect("mongodb://localhost:27017/stage")
+.connect(`mongodb+srv://jaysanjeev239:c8UYejS8Obl63RqR@cluster0.yjkwkr2.mongodb.net/?retryWrites=true&w=majority`)
+
 .then(() => {
     app.listen(3000)
     console.log("Connexion à la base de données réussie");

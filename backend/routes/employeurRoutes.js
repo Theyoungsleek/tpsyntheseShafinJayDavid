@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const employeurController = require('../Controllers/employeurController');
+const employeurController = require('../Controllers/stageController');
 
 router.post('/', employeurController.createEmployeur);
 router.get('/:id', employeurController.getEmployeur);
